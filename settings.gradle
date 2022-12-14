@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven/' } //华为
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            allowInsecureProtocol = true
+        } //啊理
+
+        //        flatDir {
+//            dirs './living/libs', 'libs'
+//        }
+
+    }
+
+
+}
+rootProject.name = "mvvm_kotlin_1"
+include ':app', ':myCamera'
