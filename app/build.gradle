@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
 }
+apply from: 'https://gitee.com/rain_9155/hosting/raw/master/MavenPublishScript/publication.gradle'
 
 android {
     compileSdk 32
