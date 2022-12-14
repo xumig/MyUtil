@@ -32,10 +32,8 @@
         android:theme="@style/Theme.IndoTunai"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
-
         <activity
-            android:name=".main.StartActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.IndoTunai">
@@ -45,19 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity
-            android:name=".main.MainActivity"
-            android:exported="false"
-            android:launchMode="singleTask" />
-
-        <activity
-            android:name=".main.LoginActivity"
-            android:exported="false"
-            android:launchMode="singleTask" />
-
-
     </application>
 
 </manifest>

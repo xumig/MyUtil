@@ -1,9 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
 }
-apply from: 'https://gitee.com/rain_9155/hosting/raw/master/MavenPublishScript/publication.gradle'
+
 
 android {
     compileSdk 32
@@ -55,20 +54,6 @@ android {
         }
     }
 
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-
-            def appname = "app"
-            def time = new Date().format("MMddHHmmss").toString()
-            def fileName = "${appname}_${time}_v${defaultConfig.versionName}"
-            if (variant.buildType.name == "release") {
-                fileName = fileName + "_release.apk"
-            } else {
-                fileName = fileName + "_debug.apk"
-            }
-            outputFileName = fileName
-        }
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -114,54 +99,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    implementation project(':myCamera')
 
 
-    //需要引用的
-    implementation 'com.adjust.sdk:adjust-android:4.28.9'
-    implementation 'com.android.installreferrer:installreferrer:2.2'
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
-    implementation platform('com.google.firebase:firebase-bom:28.3.1')
-    implementation 'com.google.firebase:firebase-messaging:22.0.0'
-    implementation 'com.google.firebase:firebase-analytics:19.0.0'
-    implementation 'com.google.firebase:firebase-firestore:23.0.3'
-    implementation 'com.google.android.gms:play-services-auth:19.0.0'
-    implementation 'com.google.android.gms:play-services-auth-api-phone:17.5.1'
-    implementation 'com.flurry.android:analytics:12.13.0'
-    api('com.google.firebase:firebase-auth') {
-        exclude module: "play-services-safetynet"
-    }
 
-    //mmkv
-    implementation 'com.tencent:mmkv:1.2.11'
-
-
-    //网络请求框架
-    final RETROFIT_VERSION = '2.8.1'
-    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
-    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
-
-    //状态栏
-    implementation 'com.gitee.zackratos:UltimateBarX:0.8.0'
-
-    //Android运行时权限
-    implementation 'com.guolindev.permissionx:permissionx:1.7.1'
-
-    implementation 'com.github.liys666666:LDialog:V2.1.0'  //添加
-    //图片加载
-    implementation("io.coil-kt:coil:1.2.1")
-    //动画
-    implementation 'com.airbnb.android:lottie:5.2.0'
-
-    //MobileInfo
-    implementation 'fairy.easy:mobilehardware:2.4.8'
-    //图片选择器
-    implementation 'com.github.donkingliang:ImageSelector:2.2.1'
-//图片压缩
-    implementation 'me.shouheng.compressor:compressor:0.0.1'
-    //手机信息
-    implementation 'fairy.easy:mobilehardware:2.4.8'
 
 
 }
