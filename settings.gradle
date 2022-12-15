@@ -10,19 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://repo.huaweicloud.com/repository/maven/' } //华为
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'
-            allowInsecureProtocol = true
-        } //啊理
-
-        //        flatDir {
-//            dirs './living/libs', 'libs'
-//        }
-
     }
-
-
 }
-rootProject.name = "MyUtil"
+rootProject.name = "MYUtil"
 include ':app'
+include ':mylibrary'
