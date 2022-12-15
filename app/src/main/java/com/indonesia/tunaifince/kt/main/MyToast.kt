@@ -1,4 +1,4 @@
-package com.indonesia.tunaifince.mylibrary
+package com.indonesia.tunaifince.kt.main
 
 import android.content.Context
 import android.widget.Toast

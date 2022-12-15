@@ -1,14 +1,14 @@
 plugins {
-    id 'com.android.application'
+  //  id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.android.library'
 }
 
-
+apply from: 'https://gitee.com/rain_9155/hosting/raw/master/MavenPublishScript/publication.gradle'
 android {
     compileSdk 32
     buildToolsVersion '30.0.3'
     defaultConfig {
-        applicationId "com.indonesia.tunaifince.kt"
         minSdk 23
         targetSdk 32
         versionCode 1
